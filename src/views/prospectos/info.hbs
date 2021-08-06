@@ -1,0 +1,60 @@
+<div class="col-md-4 mx-auto">
+    <div class="card text-center">
+        <div class="card-header">
+            <h3>Información del Prospecto</h3>
+        </div>
+        <div class="card-body">
+            <form action="/prospectos" method="GET">
+                <div class="mt-3">
+                     <h6 class="card-subtitle mb-2 text-muted">Datos del Prospecto</h6>
+                    <input type="text" name="nombres" class="form-control" 
+                    placeholder="Nombres" value="{{prospecto.nombres}}" disabled>
+                </div>
+                <div class="mt-3">
+                    <input type="text" name="apPat" class="form-control" 
+                    placeholder="Primer Apellido" value="{{prospecto.apPat}}" disabled>
+                </div>
+                <div class="mt-3">
+                    <input type="text" name="apMat" class="form-control" 
+                    placeholder="Segundo Apellido" value="{{prospecto.apMat}}" disabled>
+                </div>
+                 <div class="mt-3">
+                    <input type="number" name="telefono" maxlength="10" class="form-control" 
+                    placeholder="Número de Teléfono (Máximo 10 digitos) " value="{{prospecto.telefono}}" disabled/>
+                </div>
+                 <div class="mt-3">
+                    <input type="text" name="rfc" maxlength="13" class="form-control" 
+                    placeholder="RFC (Máximo 13 digitos)" value="{{prospecto.rfc}}" disabled />
+                </div>
+                <hr class="my-4">
+                <div class="mt-3">
+                     <h6 class="card-subtitle mb-2 text-muted">Dirección del Prospecto</h6>
+                    <input type="text" name="calle" class="form-control" 
+                    placeholder="Calle " value="{{prospecto.calle}}" disabled>
+                </div>
+                <div class="mt-3">
+                    <input type="text" name="numCasa" class="form-control" 
+                    placeholder="Número ext. de casa" value="{{prospecto.numCasa}}" disabled>
+                </div>
+                <div class="mt-3">
+                    <input type="text" name="colonia" class="form-control" 
+                    placeholder="Colonia" value="{{prospecto.colonia}}" disabled>
+                </div>
+                <div class="mt-3">
+                    <input type="number" name="cp" class="form-control" 
+                    placeholder="Codigo Postal" value="{{prospecto.cp}}" disabled>
+                </div>
+                <hr class="my-4">
+                <div class="mt-3">
+                     <h6 class="card-subtitle mb-2 text-muted">Documentos del Prospecto</h6>
+                    <input type="text" name="docs" class="form-control" 
+                    placeholder="Documentos " value="{{prospecto.docs}}" disabled>
+                </div>
+                <div>
+                    <button class="btn btn-primary w-100">volver</button>
+                </div>
+               
+            </form>
+        </div>
+    </div>
+</div>

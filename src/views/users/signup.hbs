@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-md-4 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                Registra una cuenta
+            </div>
+            <div class="card-body">
+                <form action="/users/signup" method="POST">
+                <div class="mt-3">
+                    <input type="text" class="form-control" name="nombre" placeholder="Nombres" value="{{nombre}}">
+                </div>
+                <div class="mt-3">
+                    <input type="text" class="form-control" name="numPromotor" placeholder="Número de empleado" value="{{numPromotor}}">
+                </div>
+                <div class="mt-3">
+                    <input type="password" class="form-control" name="rfc" placeholder="RFC(Contraseña)" value="{{rfc}}">
+                </div>
+                <button class="btn btn-primary w-100 mt-3">Registrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

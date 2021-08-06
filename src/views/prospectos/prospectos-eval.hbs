@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="card-header mx-auto text-center">
+        <h1> Evaluar Prospectos</h1>
+    </div>
+    <hr class="my-4">
+    <div class="container mt-3 ml-auto">
+        <h2> Lista de Prospectos</h2>
+        
+    </div>
+    {{#each prospectos}}
+    <div class="col-md-4 mt-3">
+        <div class="card text-center">
+            <div class="card-body mx-auto">
+                <h3>{{nombres}}
+                    {{apPat}}
+                    {{apMat}}
+                    <a href="/prospectos/editar/{{_id}}"><i class="fas fa-pencil"></i></a>
+                </h3>
+                <hr class="my-4">
+                <label>Estatus: <span class="w3-tag w3-padding w3-round ">{{status}}</span></label>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+    <div class="row">
+        <hr class="my-4">
+    </div>
+</div>

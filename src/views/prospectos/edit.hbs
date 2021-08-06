@@ -1,0 +1,90 @@
+<div class="col-md-4 mx-auto">
+    <div class="card text-center">
+        <div class="card-header">
+            <h3>Información del Prospecto</h3>
+        </div>
+        <div class="card-body">
+            <form action="/prospectos/editar/{{prospecto._id}}?_method=PUT" method="POST">
+                <input type="hidden" name="_method" value="PUT">
+                <div class="mt-3">
+                    <h6 class="card-subtitle mb-2 text-muted">Datos del Prospecto</h6>
+                    <input type="text" name="nombres" class="form-control" placeholder="Nombres"
+                        value="{{prospecto.nombres}}">
+                </div>
+                <div class="mt-3">
+                    <input type="text" name="apPat" class="form-control" placeholder="Primer Apellido"
+                        value="{{prospecto.apPat}}">
+                </div>
+                <div class="mt-3">
+                    <input type="text" name="apMat" class="form-control" placeholder="Segundo Apellido"
+                        value="{{prospecto.apMat}}">
+                </div>
+                <div class="mt-3">
+                    <input type="number" name="telefono" maxlength="10" class="form-control"
+                        placeholder="Número de Teléfono (Máximo 10 digitos) " value="{{prospecto.telefono}}" />
+                </div>
+                <div class="mt-3">
+                    <input type="text" name="rfc" maxlength="13" class="form-control"
+                        placeholder="RFC (Máximo 13 digitos)" value="{{prospecto.rfc}}" />
+                </div>
+                <hr class="my-4">
+                <div class="mt-3">
+                    <h6 class="card-subtitle mb-2 text-muted">Dirección del Prospecto</h6>
+                    <input type="text" name="calle" class="form-control" placeholder="Calle "
+                        value="{{prospecto.calle}}">
+                </div>
+                <div class="mt-3">
+                    <input type="text" name="numCasa" class="form-control" placeholder="Número ext. de casa"
+                        value="{{prospecto.numCasa}}">
+                </div>
+                <div class="mt-3">
+                    <input type="text" name="colonia" class="form-control" placeholder="Colonia"
+                        value="{{prospecto.colonia}}">
+                </div>
+                <div class="mt-3">
+                    <input type="number" name="cp" class="form-control" placeholder="Codigo Postal"
+                        value="{{prospecto.cp}}">
+                </div>
+                <hr class="my-4">
+                <div class="mt-3">
+                    <h6 class="card-subtitle mb-2 text-muted">Documentos del Prospecto</h6>
+                    <input type="text" name="docs" class="form-control" placeholder="Documentos "
+                        value="{{prospecto.docs}}">
+                </div>
+                <hr class="my-4">
+                <div class="mt-3">
+                    <div class="row">
+                        <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+                        <div class="col-sm-10">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="noCheck" value="Aceptado"
+                                    onclick="javascript:yesnoCheck();" checked>
+                                <label class="form-check-label" for="noCheck">
+                                    Aceptar
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="yesCheck"
+                                    onclick="javascript:yesnoCheck();" value="Rechazado">
+                                <label class="form-check-label" for="yesCheck">
+                                    Rechazar
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="mt-3 form-control" id="ifYes" style="display:none">
+                        Observaciones
+                        <textarea class="form-control" type='text' id='yes' name="observaciones"></textarea><br>
+
+                    </div>
+                </div>
+
+                <div>
+                    <button class="btn btn-primary w-100">Evaluar</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
