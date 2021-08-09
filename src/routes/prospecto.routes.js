@@ -6,9 +6,23 @@ const { renderForm, crearNuevoProsp,
     renderInfoForm,
     eliminarProsp } = require('../controllers/prospecto.controller');
 const {isAuthenticated} = require('../helpers/auth');
+
+const multer= require('multer');
+const mimeTypes= require('mime-types');
+
+const storage = multer.diskStorage({
+    destination: 'src/public/docs/'
+    ,
+   
+    filename: (req, file, cb)=> {
+        cb(null, file.originalname + '-' + Date.now()+'.'+mimeTypes.extension(file.mimetype));
+    }
+});
+   
+const upload = multer({ storage: storage });
 //Creación prospectos
 router.get('/prospectos/nuevo', isAuthenticated,renderForm);
-router.post('/prospectos/nuevo',isAuthenticated, crearNuevoProsp);
+router.post('/prospectos/nuevo',upload.array('docs'),isAuthenticated, crearNuevoProsp);
 
 //Obtener todos los prospectos
 router.get('/prospectos', isAuthenticated,renderPrivProsp);

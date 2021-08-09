@@ -1,12 +1,15 @@
 const prospectosCtrl = {};
 const Prospecto= require('../models/Prospectos');
+
+
 //Creacion Prospectos
 
 prospectosCtrl.renderForm = (req, res) => {
     res.render('prospectos/nuevoProspecto');
 };
 prospectosCtrl.crearNuevoProsp = async (req, res) => {
-    const {nombres,apPat,apMat,telefono,rfc,calle,numCasa,colonia,cp,docs}=req.body;
+    const {nombres,apPat,apMat,telefono,rfc,calle,numCasa,colonia,cp,docs }=req.body;
+    console.log(req.body);
     const newProsp= new Prospecto({nombres,apPat,apMat,telefono,rfc,calle,numCasa,colonia,cp,docs});
     newProsp.promotor= req.user.numPromotor;
     await newProsp.save();

@@ -4,9 +4,9 @@
             <h3>Prospecto Nuevo</h3>
         </div>
         <div class="card-body">
-            <form action="/prospectos/nuevo" method="POST">
+            <form action="/prospectos/nuevo" method="POST" enctype="multipart/form-data">
                 <div class="mt-3">
-                     <h6 class="card-subtitle mb-2 text-muted">Datos del Prospecto</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Datos del Prospecto</h6>
                     <input type="text" name="nombres" class="form-control" placeholder="Nombres" autofocus>
                 </div>
                 <div class="mt-3">
@@ -15,15 +15,19 @@
                 <div class="mt-3">
                     <input type="text" name="apMat" class="form-control" placeholder="Segundo Apellido">
                 </div>
-                 <div class="mt-3">
-                    <input type="number" name="telefono" maxlength="10" class="form-control" placeholder="Número de Teléfono (Máximo 10 digitos) " oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
+                <div class="mt-3">
+                    <input type="number" name="telefono" maxlength="10" class="form-control"
+                        placeholder="Número de Teléfono (Máximo 10 digitos) "
+                        oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
                 </div>
-                 <div class="mt-3">
-                    <input type="text" name="rfc" maxlength="13" class="form-control" placeholder="RFC (Máximo 13 digitos)" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
+                <div class="mt-3">
+                    <input type="text" name="rfc" maxlength="13" class="form-control"
+                        placeholder="RFC (Máximo 13 digitos)"
+                        oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
                 </div>
                 <hr class="my-4">
                 <div class="mt-3">
-                     <h6 class="card-subtitle mb-2 text-muted">Dirección del Prospecto</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Dirección del Prospecto</h6>
                     <input type="text" name="calle" class="form-control" placeholder="Calle ">
                 </div>
                 <div class="mt-3">
@@ -37,13 +41,14 @@
                 </div>
                 <hr class="my-4">
                 <div class="mt-3">
-                     <h6 class="card-subtitle mb-2 text-muted">Documentos del Prospecto</h6>
-                    <input type="text" name="docs" class="form-control" placeholder="Documentos ">
+                    <label for="formFileMultiple" class="form-label">Documentos del Prospecto</label>
+                    <input class="form-control" type="file" id="formFileMultiple" name="docs"  multiple />
+
                 </div>
                 <div class="mt-3">
                     <button class="btn btn-primary w-100">Guardar</button>
                 </div>
-               
+
             </form>
         </div>
     </div>

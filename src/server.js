@@ -7,6 +7,7 @@ const session = require('express-session');
 const passport= require('passport');
 
 
+
 //inicializaciones
 const app = express();
 require('./config/passport');
